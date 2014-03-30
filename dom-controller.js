@@ -1,12 +1,20 @@
 /* DOM Controller */
 function D(select)
 {
-	return (new DOMController()).Select(select,document);
+	if((typeof select) == "string")
+		return (new DOMController()).Select(select,document);
+	else 
+		return (new DOMController()).ByElement(select);
 }
 function DOMController()
 {
 	this.Select = function(select, par){
 		this.DO = Array.prototype.slice.call(par.querySelectorAll(select));
+		return this;
+	}
+	this.ByElement = function(elem)
+	{
+		this.DO = new Array(elem);
 		return this;
 	}
 	this.setCSS = function(attr, val)
