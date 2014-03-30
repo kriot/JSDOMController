@@ -74,4 +74,15 @@ function DOMController()
 		else
 			return this.getCSS(attr);
 	}
+	this.attr = function(attr, val)
+	{
+		if(val)
+		{
+			this.setAttr(attr, val);
+			return this;
+		}
+		else
+			return this.getAttr(attr);
+	}
+	
 }
