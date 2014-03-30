@@ -88,4 +88,27 @@ function DOMController()
 	{
 		return this.attr("value",val);
 	}
+	this.setHTML = function(html)
+	{
+		for(var item in this.DO)
+			if(this.DO.hasOwnProperty(item) && this.DO[item].style)
+				this.DO[item].innerHTML = html;
+		return this;
+	}
+	this.getHTML = function()
+	{
+		for(var item in this.DO)
+			if(this.DO.hasOwnProperty(item) && this.DO[item].style)
+				return this.DO[item].innerHTML;
+	}
+	this.html = function(html)
+	{
+		if(html)
+		{
+			this.setHTML(html);
+			return this;
+		}
+		else
+			return this.getHTML();
+	}
 }
