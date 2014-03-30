@@ -42,4 +42,13 @@ function DOMController()
 		this.DO = res;
 		return this;
 	}
+	this.Parent = function()
+	{
+		var res = new Array();
+		for(var item in this.DO)
+			if(this.DO.hasOwnProperty(item) && this.DO[item].style)
+				res.push(this.DO[item].parentNode);
+		this.DO = res;
+		return this;
+	}
 }
