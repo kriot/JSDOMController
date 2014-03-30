@@ -64,4 +64,14 @@ function DOMController()
 		this.DO = res;
 		return this;
 	}
+	this.css = function(attr, val)
+	{
+		if(val)
+		{
+			this.setCSS(attr, val);
+			return this;
+		}
+		else
+			return this.getCSS(attr);
+	}
 }
