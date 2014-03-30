@@ -6,13 +6,7 @@ function D(select)
 function DOMController()
 {
 	this.Select = function(select, par){
-		var firstChar = select.split('')[0];
-		if(firstChar == "#")
-			this.DO = new Array(par.getElementById(select.substring(1)));
-		else if(firstChar == ".")
-			this.DO = par.getElementsByClassName(select.substr(1));
-		else
-			this.DO = par.getElementsByTagName(select);
+		this.DO = par.querySelectorAll(select);
 		return this;
 	}
 	this.setCSS = function(attr, val)
