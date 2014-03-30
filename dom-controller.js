@@ -119,4 +119,10 @@ function DOMController()
 		else
 			return this.getHTML();
 	}
+	this.on = function(eventName, funct)
+	{
+		for(var item in this.DO)
+			if(this.DO.hasOwnProperty(item))
+				this.DO[item].addEventListener(eventName, funct);	
+	}
 }
