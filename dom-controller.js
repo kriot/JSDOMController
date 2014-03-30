@@ -6,7 +6,7 @@ function D(select)
 function DOMController()
 {
 	this.Select = function(select, par){
-		this.DO = par.querySelectorAll(select);
+		this.DO = Array.prototype.slice.call(par.querySelectorAll(select));
 		return this;
 	}
 	this.setCSS = function(attr, val)
