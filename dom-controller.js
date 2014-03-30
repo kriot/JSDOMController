@@ -51,4 +51,17 @@ function DOMController()
 		this.DO = res;
 		return this;
 	}
+	this.CreateChild = function(name)
+	{
+		var res = new Array();
+		for(var item in this.DO)
+			if(this.DO.hasOwnProperty(item) && this.DO[item].style)
+			{
+				var ch = document.createElement(name);
+				this.DO[item].appendChild(ch);
+				res.push(ch);
+			}
+		this.DO = res;
+		return this;
+	}
 }
