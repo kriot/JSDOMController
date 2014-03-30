@@ -125,4 +125,10 @@ function DOMController()
 			if(this.DO.hasOwnProperty(item))
 				this.DO[item].addEventListener(eventName, funct);	
 	}
+	this.each = function(funct)
+	{
+		for(var item in this.DO)
+			if(this.DO.hasOwnProperty(item))
+				funct.call((new DOMController()).ByElement(this.DO[item]));
+	}
 }
