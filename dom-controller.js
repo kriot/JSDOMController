@@ -18,25 +18,25 @@ function DOMController()
 	this.setCSS = function(attr, val)
 	{
 		for(var item in this.DO)
-			if(this.DO.hasOwnProperty(item))
+			if(this.DO.hasOwnProperty(item) && this.DO[item].style)
 				this.DO[item].style[attr] = val;
 	}
 	this.getCSS = function(attr)
 	{
 		for(var item in this.DO)
-			if(this.DO.hasOwnProperty(item))
+			if(this.DO.hasOwnProperty(item) && this.DO[item].style)
 				return this.DO[item].style[attr]; 
 	}
 	this.setAttr = function(attr, val)
 	{
 		for(var item in this.DO)
-			if(this.DO.hasOwnProperty(item))
+			if(this.DO.hasOwnProperty(item) && this.DO[item].setAttribute)
 				this.DO[item].setAttribute(attr, val);
 	}
 	this.getAttr = function(attr)
 	{
 		for(var item in this.DO)
-			if(this.DO.hasOwnProperty(item))
+			if(this.DO.hasOwnProperty(item) && this.DO[item].getAttribute)
 				return this.DO[item].getAttribute(attr); 
 	}
 }
