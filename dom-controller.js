@@ -10,7 +10,7 @@ function DOMController()
 		if(firstChar == "#")
 			this.DO = new Array(par.getElementById(select.substring(1)));
 		else if(firstChar == ".")
-			this.DO = par.getElementsByClass(select.substr(1));
+			this.DO = par.getElementsByClassName(select.substr(1));
 		else
 			this.DO = par.getElementsByTagName(select);
 		return this;
@@ -38,5 +38,14 @@ function DOMController()
 		for(var item in this.DO)
 			if(this.DO.hasOwnProperty(item) && this.DO[item].getAttribute)
 				return this.DO[item].getAttribute(attr); 
+	}
+	this.Find = function(select)
+	{
+		var res = new Array();
+		for(var item in this.DO)
+			if(this.DO.hasOwnProperty(item) && this.DO[item].style)
+				res = res.concat((new DOMController()).Select(select, this.DO[item]).DO);
+		this.DO = res;
+		return this;
 	}
 }
