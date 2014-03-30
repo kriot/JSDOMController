@@ -84,5 +84,8 @@ function DOMController()
 		else
 			return this.getAttr(attr);
 	}
-	
+	this.val = function(val)
+	{
+		return this.attr("value",val);
+	}
 }
