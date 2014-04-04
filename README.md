@@ -5,6 +5,7 @@ This framework provides functions for creating, updating and getting values CSS 
 ##How to use
 ###Get object
 First you shold do is get an object for modifications. There are two ways to do it:
+
  * Selectors: 
    Write ```D(s)```, where s is a selector string. You can read more about selectors format here: http://www.w3.org/TR/CSS21/selector.html
 
@@ -12,6 +13,7 @@ First you shold do is get an object for modifications. There are two ways to do 
 
 ###Use object
 Now you use these functions:
+
  * ```css(attr)``` - returns the css property value of first of objects you chosen.
  * ```css(attr, val)``` - sets the css property value.
  * ```html()``` - returns inner HTML of first of objects you chosen.
